@@ -1,29 +1,232 @@
 <!DOCTYPE html>
+<!-- VERSION V0R25 -->
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue sur mon site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 700px;
-            margin: 50px auto;
-            text-align: center;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            color: #333;
-        }
-        a {
-            color: #007acc;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio de Arnaud Golliot</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+
+    header {
+      text-align: center;
+      /* padding: 50px 20px 30px; */
+      padding: 5px 15px 10px; 
+      background: linear-gradient(135deg, #007acc, #00a6c9);
+      color: white;
+      position: relative;
+      max-width: 80%;
+      margin: 0 auto 40px auto;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .avatar {
+      position: absolute;
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      border: 2px solid white;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2em;
+    }
+
+    /* --- Grille des documents optimisée pour 1080p --- */
+    .subtitle {
+      font-size: 1.05em;
+      /* max-width: 800px; */
+      max-width: 80%;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #f1f1f1;
+    }
+
+    /* --- Grille des documents optimisée pour 1080p --- */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+      padding: 0 10px;
+      justify-items: center;
+    }
+
+    /* 2ème ligne de 4 cartes centrée */
+    .grid-container .card:nth-child(n+6) {
+      grid-column: span 1;
+    }
+
+    /* Responsive tablette */
+    @media (max-width: 1024px) {
+      .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Responsive mobile */
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      text-align: center;
+      padding: 15px;
+      width: 100%;
+      max-width: 200px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 80%;
+      max-height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 1.1em;
+      color: #007acc;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 5px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007acc;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9em;
+      transition: background-color 0.2s;
+    }
+
+    .card a:hover {
+      background-color: #005f99;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #007acc;
+      color: white;
+      font-size: 0.9em;
+    }
+
+  </style>
 </head>
 <body>
-    <h1>Bonjour, je suis Arnaud</h1>
-    <p>Bienvenue sur mon site personnel !</p>
-    <p>Tu peux retrouver ici mes documents, projets, et infos de contact.</p>
-    <a href="mailto:arnaud.golliot.dufour@gmail.com">Me contacter</a>
+
+  <header>
+    <img src="images/AG_photo.jpg" alt="Photo de profil" class="avatar">
+    <h1>Portfolio Data de Arnaud Golliot</h1>
+    <p class="subtitle"><i>
+      Consultant Freelance spécialisé en Data et Management de projet, je mets 25 ans d’expérience en pilotage SI (MOA, MOE, PMO) au service de projets data à fort impact métier, notamment dans l’Économie Sociale et Solidaire.
+    </i></p>
+  </header>
+
+  <!-- Grille de documents optimisée -->
+  <div class="grid-container">
+
+    <div class="card">
+      <img src="images/carte_mentale.png" alt="Carte Mentale">
+      <h3>Carte Mentale</h3>
+      <a href="docs/OPC_P13_Carte_Mentale_v0r16.pdf" target="_blank">Ouvrir</a>
+    </div>
+
+    <div class="card">
+      <img src="images/analyse_du_besoin.png" alt="Analyse du besoin">
+      <h3>Analyse du besoin</h3>
+      <a href="docs/OPC_P13_Analyse_du_besoin_du_client_v0r02.pdf" target="_blank">Ouvrir</a>
+    </div>
+
+    <div class="card">
+      <img src="images/cahier_des_charges.png" alt="Cahier des charges">
+      <h3>Cahier des charges</h3>
+      <a href="docs/OPC_P13_Cahier_des_charges_fonctionnel_du_projet_Elaborer_un_portfolio_v0r20.pdf" target="_blank">Ouvrir</a>
+    </div>
+
+    <div class="card">
+      <img src="images/diagramme_de_gantt.png" alt="Diagramme de Gantt">
+      <h3>Diagramme de Gantt</h3>
+      <a href="docs/OPC_P13_GANTT_v0r06.pdf" target="_blank">Ouvrir</a>
+    </div>
+
+    <div class="card">
+      <img src="images/Portfolio.png" alt="Portfolio">
+      <h3>Portfolio des projets data</h3>
+      <a href="docs/OPC_P13_Portfolio-des-projets-parcours-Data-Analyst_v0r02.pdf" target="_blank">Ouvrir</a>
+    </div>
+
+    <!-- Deuxième ligne de 4 cartes centrée -->
+    <div class="card">
+      <img src="images/dashboard_portfolio.png" alt="Dashboard Portfolio">
+      <h3>Dashboard des projets data</h3>
+      <a href="docs/OPC_P13_Portfolio_Projets_Dashboard_v0r16.pbix" target="_blank">Ouvrir</a>
+    </div>
+
+    <div class="card">
+      <img src="images/dashboard_VI.png" alt="Dashboard Veille">
+      <h3>Dashboard de veille informationnelle</h3>
+      <a href="docs/OPC_P13_Veille_Informationnelle_v0r07.pbix" target="_blank">Ouvrir</a>
+    </div>
+
+    <div class="card">
+      <img src="images/Tutorial.png" alt="Tutoriel Power BI">
+      <h3>Tutoriel Power BI</h3>
+      <a href="https://drive.google.com/file/d/1xnIx8n-Wu6CGjpbe7dTS_D9NTBhjKQum/view?usp=sharing" target="_blank">Ouvrir</a>
+    </div>
+
+    <div class="card">
+      <img src="images/User_Guide.png" alt="User Guide">
+      <h3>Manuel Power BI</h3>
+      <a href="docs/OPC_P13_Guide_d_utilisation_Power_BI_v0r08.pdf" target="_blank">Ouvrir</a>
+    </div>
+
+    <div class="card">
+      <img src="images/offre_de_services.png" alt="User Guide">
+      <h3>Offre de services</h3>
+      <a href="docs/Adunitas_Consulting_Offre_de_services.pdf" target="_blank">Ouvrir</a>
+    </div>
+
+    <div class="card">
+      <img src="images/Linkedin.png" alt="logo linkedin">
+      <h3>Mon profil Linkedin</h3>
+      <a href="docs/Arnaud_linkedin.pdf" target="_blank">Ouvrir</a>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 Arnaud Golliot — Portfolio Data & Management de projet
+  </footer>
+
 </body>
 </html>
